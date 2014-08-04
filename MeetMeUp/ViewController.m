@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EventDetailsViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *results;
@@ -39,6 +40,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.results.count;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segueID"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *event = [self.results objectAtIndex:indexPath.row];
+
+        EventDetailsViewController *dvc = (EventDetailsViewController *)segue.destinationViewController;
+        dvc.event = event;
+        NSDictionary *meet = [self.results objectAtIndex:indexPath.row];
+        dvc.title = meet[@"name"];
+    }
 }
 
 @end

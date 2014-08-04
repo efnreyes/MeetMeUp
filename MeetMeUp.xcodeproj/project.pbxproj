@@ -21,6 +21,7 @@
 		F9F5F6E3199004E200671F4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F5F6C5199004E200671F4A /* UIKit.framework */; };
 		F9F5F6EB199004E200671F4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F5F6E9199004E200671F4A /* InfoPlist.strings */; };
 		F9F5F6ED199004E200671F4A /* MeetMeUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F5F6EC199004E200671F4A /* MeetMeUpTests.m */; };
+		F9F5F6F819903B0700671F4A /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F5F6F719903B0700671F4A /* EventDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F9F5F6E8199004E200671F4A /* MeetMeUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeetMeUpTests-Info.plist"; sourceTree = "<group>"; };
 		F9F5F6EA199004E200671F4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9F5F6EC199004E200671F4A /* MeetMeUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetMeUpTests.m; sourceTree = "<group>"; };
+		F9F5F6F619903B0600671F4A /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		F9F5F6F719903B0700671F4A /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				F9F5F6D7199004E200671F4A /* ViewController.m */,
 				F9F5F6D9199004E200671F4A /* Images.xcassets */,
 				F9F5F6C8199004E200671F4A /* Supporting Files */,
+				F9F5F6F619903B0600671F4A /* EventDetailsViewController.h */,
+				F9F5F6F719903B0700671F4A /* EventDetailsViewController.m */,
 			);
 			path = MeetMeUp;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			files = (
 				F9F5F6D8199004E200671F4A /* ViewController.m in Sources */,
 				F9F5F6D2199004E200671F4A /* AppDelegate.m in Sources */,
+				F9F5F6F819903B0700671F4A /* EventDetailsViewController.m in Sources */,
 				F9F5F6CE199004E200671F4A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
