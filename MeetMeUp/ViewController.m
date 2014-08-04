@@ -33,6 +33,7 @@
     NSDictionary *venue = meet[@"venue"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCellID"];
     cell.textLabel.text = [meet objectForKey:@"name"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@ %@", venue[@"name"], venue[@"address_1"], venue[@"city"]];
     return cell;
 }
 
