@@ -144,12 +144,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="c03-Ia-S36" id="8f1-Ie-h9i"/>
+                                </connections>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghw-gg-CWy">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="&lt;" id="Bmj-8O-SLd">
+                                        <connections>
+                                            <action selector="onBackButtonPressed:" destination="c03-Ia-S36" id="9b8-so-bpB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title=">" id="t19-Oo-vdP">
+                                        <connections>
+                                            <action selector="onForwardButtonPressed:" destination="c03-Ia-S36" id="s5Y-eM-LxG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="B3Y-36-lm8"/>
                     <connections>
+                        <outlet property="backButton" destination="Bmj-8O-SLd" id="u44-25-WCh"/>
+                        <outlet property="forwardButton" destination="t19-Oo-vdP" id="s4k-uJ-lp6"/>
                         <outlet property="webView" destination="xUo-cL-DOg" id="oXS-ae-FRo"/>
                     </connections>
                 </viewController>
