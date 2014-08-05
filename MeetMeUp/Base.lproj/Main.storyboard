@@ -164,6 +164,11 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cs3-Rl-pXj">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -171,6 +176,7 @@
                     <connections>
                         <outlet property="backButton" destination="Bmj-8O-SLd" id="u44-25-WCh"/>
                         <outlet property="forwardButton" destination="t19-Oo-vdP" id="s4k-uJ-lp6"/>
+                        <outlet property="spinner" destination="cs3-Rl-pXj" id="I05-jg-SkT"/>
                         <outlet property="webView" destination="xUo-cL-DOg" id="oXS-ae-FRo"/>
                     </connections>
                 </viewController>

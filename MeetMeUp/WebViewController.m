@@ -11,6 +11,7 @@
 @interface WebViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -33,8 +34,13 @@
 
 }
 
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.spinner setHidden:NO];
+}
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [self checkStatusForButtons];
+    [self.spinner setHidden:YES];
 }
 
 - (IBAction)onBackButtonPressed:(id)sender {
