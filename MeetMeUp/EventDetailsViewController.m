@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "WebViewController.h"
 
 @interface EventDetailsViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *eventName;
@@ -50,6 +51,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showHomePageSegue"]) {
+        WebViewController *wvc = (WebViewController *) segue.destinationViewController;
+        wvc.homepageURL = [NSURL URLWithString: self.event[@"event_url"]];
+    }
 }
 
 @end
