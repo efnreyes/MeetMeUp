@@ -9,7 +9,10 @@
 #import "EventDetailsViewController.h"
 
 @interface EventDetailsViewController ()
-
+@property (strong, nonatomic) IBOutlet UILabel *eventName;
+@property (strong, nonatomic) IBOutlet UILabel *RSVPCount;
+@property (strong, nonatomic) IBOutlet UILabel *hostingGroup;
+@property (strong, nonatomic) IBOutlet UILabel *eventDesc;
 @end
 
 @implementation EventDetailsViewController
@@ -26,7 +29,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSError *err = nil;
+    NSDictionary *group = self.event[@"group"];
+    self.eventName.text = self.event[@"name"];
+    self.RSVPCount.text = [NSString stringWithFormat:@"Yes: %@ Maybe: %@", self.event[@"yes_rsvp_count"], self.event[@"maybe_rsvp_count"]];
+    self.hostingGroup.text = [NSString stringWithFormat:@"Group name: %@\nJoin mode: %@\nWho: %@", group[@"name"], group[@"join_mode"], group[@"who"]];
+    NSString *html = [NSString stringWithFormat:@"<html><body>%@</body></html>", self.event[@"description"]];
+    self.eventDesc.attributedText = [[NSAttributedString alloc]
+                                     initWithData: [html dataUsingEncoding:NSUTF8StringEncoding]
+                                     options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                     documentAttributes: nil
+                                     error: &err];
+    if(err)
+        NSLog(@"Unable to parse label text: %@", err);
+
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -51,6 +51,7 @@
         dvc.event = event;
         NSDictionary *meet = [self.results objectAtIndex:indexPath.row];
         dvc.title = meet[@"name"];
+        
     }
 }
 
